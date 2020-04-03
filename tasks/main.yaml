@@ -1,0 +1,7 @@
+---
+- name: "Install lsof"
+  package:
+    pkg: "{{ install_lsof_packages[(ansible_os_family | lower) + '_' + (ansible_architecture | lower)] }}"
+    state: "present"
+  tags:
+    - "lsof"
